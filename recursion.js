@@ -28,7 +28,7 @@ function factorialIterative(num) {
   // O(n)
   let fact = 1;
   if (num === 2) {
-    return (fact = 2);
+    return console.log((fact = 2));
   }
   for (let i = 2; i <= num; i++) {
     fact *= i;
@@ -37,4 +37,26 @@ function factorialIterative(num) {
 }
 
 console.log(factorialRecursive(5));
-factorialIterative(5);
+factorialIterative(2);
+
+// Fibonacci
+
+function fibonacciRecursive(n) {
+  // O(2^n)
+  if (n < 2) {
+    return n;
+  }
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+
+function fibonacciIterative(n) {
+  // O(n)
+  let arr = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    arr.push(arr[i - 2] + arr[i - 1]);
+  }
+  console.log(arr);
+}
+
+console.log(fibonacciRecursive(3));
+fibonacciIterative(5);
